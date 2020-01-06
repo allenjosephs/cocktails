@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 
 import './Header.css';
-import '../NavLinks';
+import NavLinks from '../NavLinks';
 
 function Header(props) {
   return (
     <nav className="Header">
-      HI
+      <h1>Cocktails</h1>
+      <NavLinks />
     </nav>
   )
 }

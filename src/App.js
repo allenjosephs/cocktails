@@ -1,26 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Main from './components/Main';
 import * as api_constants from './API_URLs';
 
 function App() {
 
-  const [allCocktails, setAllCocktails] = useState([]);
+  const [cocktails, setCocktails] = useState([]);
+  const [naCocktails, setNaCocktails] = useState([]);
+  const [shots, setShots] = useState([]);
 
   useEffect(() => {
-    fetch(`${api_constants.API_CKTL_BY_NAME}margarita`)
+    fetch(api_constants.API_CKTL_ALL_ALCOHOLIC)
       .then(res => res.json())
       .then(res => {
-        setAllCocktails(res.drinks);
+        setCocktails(res.drinks);
       });
+
+    fetch(api_constants.API_CKTL_ALL_NON_ALCOHOLIC)
+      .then(res => res.json())
+      .then(res => {
+        setNaCocktails(res.drinks);
+      });
+
+    fetch(api_constants.API_CKTL_ALL_SHOTS)
+      .then(res => res.json())
+      .then(res => {
+        setShots(res.drinks);
+      });
+
   }, []);
 
   return (
-    <>
+    <div className="App">
       <Header />
-      {/* {allCocktails.length !== 0 && <Main cocktails={allCocktails} />} */}
-    </>
+      <Main cocktails={cocktails} />
+    </div>
   );
 }
 

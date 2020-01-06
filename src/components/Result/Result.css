@@ -1,0 +1,6 @@
+.Result {
+  height: 15vh;
+  min-width: 7vw;
+  border: 1px solid salmon;
+  margin: 1vw;
+}

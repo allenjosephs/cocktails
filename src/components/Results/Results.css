@@ -1,0 +1,8 @@
+.Results {
+  border: 1px solid green;
+  grid-area: results;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}

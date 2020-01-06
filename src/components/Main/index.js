@@ -4,17 +4,24 @@ import React, { useState, useEffect } from 'react';
 import './Main.css';
 import '../NavLinks';
 
-function Header(props) {
-  console.log('in Header')
-  console.log(props.cocktails);
+import FiltersAndResults from './../FiltersAndResults';
+import Beverage from './../Beverage';
 
-  return (
-    <div>
-      {props.cocktails.map(c => {
-        return c.strDrink
-      })}
-    </div>
+function Main(props) {
+
+  return(
+    <main className="Main">
+      <FiltersAndResults />
+      <Beverage />
+    </main>
+
+    // props.cocktails.map(c => {
+    //   return(
+    //     <p> {c.strDrink} </p>
+    //   )
+    // })
   )
+
 }
 
-export default Header;
+export default Main;

@@ -1,19 +1,20 @@
 
+
 // Seach by cocktail name
 export const API_CKTL_BY_NAME =
-  "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/search.php?s=`;
 
 // Search cocktails by first letter
 export const API_CKTLS_BY_FIRST_LETTER =
-  "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/search.php?f=`;
 
 // Search by ingredient
 export const API_INGREDIENT_BY_NAME =
-  "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=";
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/search.php?i=`;
 
 // Lookup full cocktail details by id
 export const API_CKTL_BY_ID =
-  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/lookup.php?i=`;
 
 // Lookup ingredient by ID
 // https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=552
@@ -25,13 +26,16 @@ export const API_CKTL_BY_ID =
 // https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
 // https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka
 
-// Filter by alcoholic
-// https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
-// https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
+// Get all alcoholic drinks
+export const API_CKTL_ALL_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?a=Alcoholic`;
 
-// Filter by Category
-// https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink
-// https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail
+// Get all non-alcoholic drinks
+export const API_CKTL_ALL_NON_ALCOHOLIC =
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?a=Non_Alcoholic`;
+
+// Get all shots
+export const API_CKTL_ALL_SHOTS =
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?c=Shot`;
 
 // Filter by Glass
 // https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Cocktail_glass

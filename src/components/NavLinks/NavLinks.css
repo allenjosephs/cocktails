@@ -1,0 +1,7 @@
+.NavLinks {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+  font-size: .65em;
+  letter-spacing: .1em;
+}

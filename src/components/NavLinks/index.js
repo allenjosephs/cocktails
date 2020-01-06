@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './NavLinks.css';
+import NavLink from './../NavLink';
 
-function index() {
+function NavLinks() {
   return (
-    <div>
-
+    <div className="NavLinks">
+      <NavLink txt="Mixed Drinks" /> |
+      <NavLink txt="Shots" /> |
+      <NavLink txt="Breweries" /> |
+      <NavLink txt="Teetotalers" />
     </div>
-  )
+  );
 }
 
-export default index;
+export default NavLinks;

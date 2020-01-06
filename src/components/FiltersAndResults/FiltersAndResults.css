@@ -1,0 +1,7 @@
+.FiltersAndResults {
+  grid-area: filters-and-results;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: "filters results";
+  justify-items: center;
+}
