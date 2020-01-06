@@ -1,18 +1,18 @@
 
 // Seach by cocktail name
-const API_CKTL_BY_NAME =
+export const API_CKTL_BY_NAME =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 // Search cocktails by first letter
-const API_CKTLS_BY_FIRST_LETTER =
+export const API_CKTLS_BY_FIRST_LETTER =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
 
 // Search by ingredient
-const API_INGREDIENT_BY_NAME =
+export const API_INGREDIENT_BY_NAME =
   "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=";
 
 // Lookup full cocktail details by id
-const API_CKTL_BY_ID =
+export const API_CKTL_BY_ID =
   "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 // Lookup ingredient by ID

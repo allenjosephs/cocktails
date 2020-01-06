@@ -1,34 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-
 import Header from './components/Header';
+import * as api_constants from './API_URLs';
 
 function App() {
 
-  const [allCocktails, setAllCocktails] = useState({
-    allCocktails: []
-  });
-
-  const updateAllCocktails = cocktailsArray => {
-    setAllCocktails({
-      allCocktails: cocktailsArray
-    })
-  }
+  const [allCocktails, setAllCocktails] = useState([]);
 
   useEffect(() => {
-    updateAllCocktails(getAllCockails());
+    fetch(`${api_constants.API_CKTL_BY_NAME}margarita`)
+      .then(res => res.json())
+      .then(res => {
+        setAllCocktails(res.drinks);
+      });
   }, []);
 
-  const getAllCockails = () => {
-    return ["cocktail1", "cocktail2", "cocktail3"];
-  }
-
   return (
-    <Header cocktails={allCocktails} />
+    <>
+      <Header />
+      {/* {allCocktails.length !== 0 && <Main cocktails={allCocktails} />} */}
+    </>
   );
 }
-
-
 
 export default App;

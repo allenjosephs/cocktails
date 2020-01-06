@@ -5,11 +5,10 @@ import './Header.css';
 import '../NavLinks';
 
 function Header(props) {
-  console.log(props);
   return (
-    <div>
-      {props.cocktails.allCocktails}
-    </div>
+    <nav className="Header">
+      HI
+    </nav>
   )
 }
 
