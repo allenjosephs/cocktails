@@ -4,11 +4,11 @@ import './FiltersAndResults.css';
 import Filters from './../Filters';
 import Results from './../Results';
 
-function FiltersAndResults() {
+function FiltersAndResults(props) {
   return (
     <div className="FiltersAndResults">
       <Filters />
-      <Results />
+      <Results cocktails={props.cocktails} />
     </div>
   )
 }

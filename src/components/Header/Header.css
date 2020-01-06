@@ -8,7 +8,7 @@
   min-height: 20vh;
   font-size: calc(20px + 1.5em);
   letter-spacing: .35em;
-  width: 100vw;
+  max-width: 90vw;
 }
 
 .Header > h1 {

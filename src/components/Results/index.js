@@ -3,18 +3,13 @@ import './Results.css';
 
 import Result from './../Result';
 
-function Results() {
+function Results(props) {
   return (
     <div className="Results">
-      <Result />
-      <Result />
-      <Result />
-      <Result />
-      <Result />
-      <Result />
-      <Result />
-      <Result />
-      <Result />
+      {props.cocktails.map(c => {
+        return <Result cocktail={c}/>
+      })
+      }
     </div>
   );
 }

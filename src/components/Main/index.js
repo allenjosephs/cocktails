@@ -4,14 +4,16 @@ import React, { useState, useEffect } from 'react';
 import './Main.css';
 import '../NavLinks';
 
-import FiltersAndResults from './../FiltersAndResults';
+import Filters from './../Filters';
+import Results from "./../Results";
 import Beverage from './../Beverage';
 
 function Main(props) {
 
   return(
     <main className="Main">
-      <FiltersAndResults />
+      <Filters />
+      <Results cocktails={props.cocktails} />
       <Beverage />
     </main>
 
