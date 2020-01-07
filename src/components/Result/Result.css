@@ -1,14 +1,24 @@
 .Result {
   min-width: 8vw;
   max-width: 8vw;
-  /* border: 2px solid rgb(0, 0, 0); */
   margin: 1.5vw .75vw 0;
   position: relative;
-  background-color: rgb(185, 98, 27);
 }
 
 .Result:hover {
-  background-color: gray;
+  border: 5px solid black;
+  box-shadow:
+    1px 0px 1px 2px rgb(235, 252, 0),
+    -1px 0px 1px 2px rgb(235, 252, 0),
+    5px 0px 5px 1px rgb(235, 252, 0),
+    -5px 0px 5px 1px rgb(235, 252, 0),
+
+    0px 1px 1px 2px rgb(235, 252, 0),
+    0px -1px 1px 2px rgb(235, 252, 0),
+    0px 5px 5px 1px rgb(235, 252, 0),
+    0px -5px 5px 1px rgb(235, 252, 0)
+  ;
+  cursor: pointer;
 }
 
 .Result > img {
@@ -17,19 +27,20 @@
 }
 
 .bevName {
+  display: block;
+  border-top: 2px solid rgba(255, 255, 255, 0.507);
   font-size: .9em;
   font-family: 'Montserrat', sans-serif;
   background-color: rgb(0, 0, 0);
   position: absolute;
-  bottom: 0%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  /* min-height */
   color: white;
   text-align: center;
   padding: 5px;
-  border-radius: 2px / 1px;
-  /* margin: -14px; */
-  /* left: 50%; */
+  border-radius: 0 0 2px 2px / 0 0 1px 1px;
 }
 
 .thumbs {
@@ -46,8 +57,4 @@
     0px -5px 5px 1px rgb(185, 98, 27)
   ;
 
-}
-
-.thumbImg {
-  border-radius: 2px / 1px;
 }
