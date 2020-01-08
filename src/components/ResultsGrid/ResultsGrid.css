@@ -1,0 +1,7 @@
+.ResultsGrid {
+  grid-area: results;
+  display: grid;
+  grid-template-areas:
+    "nameFilter"
+    "results";
+}

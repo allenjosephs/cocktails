@@ -1,0 +1,9 @@
+.NameFilter {
+  grid-area: nameFilter;
+  margin: 0 4vw 0;
+}
+
+#nameFilterBox {
+  margin-left: .5em;
+  background-color: rgb(235, 234, 232);
+}

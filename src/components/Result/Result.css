@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.Result:hover:not(.fetched) {
+.Result:hover:not(.selected) {
   border: 5px solid black;
   box-shadow:
     1px 0px 1px 2px rgb(252, 0, 0),
@@ -75,19 +75,8 @@
   cursor: pointer;
 }
 
-.fetched {
+.fetched:not(.selected) {
   border: 5px solid black;
-  /* box-shadow:
-    1px 0px 1px 2px rgb(240, 243, 199),
-    -1px 0px 1px 2px rgb(240, 243, 199),
-    5px 0px 5px 1px rgb(240, 243, 199),
-    -5px 0px 5px 1px rgb(240, 243, 199),
-
-    0px 1px 1px 2px rgb(240, 243, 199),
-    0px -1px 1px 2px rgb(240, 243, 199),
-    0px 5px 5px 1px rgb(240, 243, 199),
-    0px -5px 5px 1px rgb(240, 243, 199)
-  ; */
 
   box-shadow:
     1px 0px 1px 2px rgb(35, 66, 243),

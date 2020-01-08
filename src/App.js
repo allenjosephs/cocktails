@@ -39,6 +39,16 @@ function App() {
 
   // console.log('cocktails :', cocktails);
 
+  const alphaSort = (a, b) => {
+    let dNameA = a.strDrink.toUpperCase();
+    let dNameB = b.strDrink.toUpperCase();
+    if (dNameA < dNameB) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+
   return (
     <div className="App">
       <Header />
@@ -61,8 +71,8 @@ function App() {
                 cocktails={
                     cocktails.filter(c => {
                       return c.strCategory.toUpperCase() !== 'SHOT';
-                      //return c;
-                    })}
+                    }).sort(alphaSort)
+                }
                 setCocktails={setCocktails}
                 {...props}
                 exact

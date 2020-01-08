@@ -6,7 +6,7 @@ import './Main.css';
 import '../NavLinks';
 
 import Filters from './../Filters';
-import Results from './../Results'
+import ResultsGrid from './../ResultsGrid'
 
 function Main(props) {
 
@@ -19,7 +19,7 @@ function Main(props) {
   return (
     <main className="Main">
       <Filters />
-      <Results
+      <ResultsGrid
         cocktails={props.cocktails}
         setCocktails={props.setCocktails}
         setBev={handleSelectedBevUpdate}
