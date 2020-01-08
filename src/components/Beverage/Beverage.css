@@ -18,17 +18,17 @@
     0px 5px 5px 1px rgb(185, 98, 27),
     0px -5px 5px 1px rgb(185, 98, 27)
   ;
-
+  transition: 1s ease;
 }
 
 .Beverage > img {
   width: 100%;
   height: auto;
   margin: 0;
+
 }
 
-.Beverage > div {
-  /* margin: .25em 0; */
+.Beverage > .bevName {
   display: block;
   background-color: rgb(0, 0, 0);
   border-top: 2px solid rgba(255, 255, 255, 0.507);
@@ -39,11 +39,37 @@
   width: 100%;
   color: white;
   text-align: center;
-  padding: 5px;
+  padding: 5px 0 10px 0;
   border-radius: 0 0 2px 2px / 0 0 1px 1px;
 }
 
 .scrolled {
   top: 3vh;
   transition: 1s ease;
+}
+
+.ingredients {
+  display: block;
+  position: absolute;
+  bottom: 100;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  border-radius: 0 0 2px 2px / 0 0 1px 1px;
+
+  box-shadow:
+    1px 0px 1px 2px rgb(66, 44, 0),
+    -1px 0px 1px 2px rgb(66, 44, 0),
+    5px 0px 5px 1px rgb(185, 98, 27),
+    -5px 0px 5px 1px rgb(185, 98, 27),
+
+    0px 1px 1px 2px rgb(66, 44, 0),
+    0px -1px 1px 2px rgb(66, 44, 0),
+    0px 5px 5px 1px rgb(185, 98, 27),
+    0px -5px 5px 1px rgb(185, 98, 27)
+  ;
+}
+
+.instructions {
+  padding-top: 10px;
 }

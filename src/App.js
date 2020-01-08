@@ -1,45 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-// const [selectedBev, setSelectedBev] = useState({});
+// const [selectedBev, setSelectedBev] = useState({})
 
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
-import Beverage from './components/Beverage';
 import * as api_constants from './API_URLs';
 
 function App() {
 
   const [cocktails, setCocktails] = useState([]);
-  const [naCocktails, setNaCocktails] = useState([]);
-  const [shots, setShots] = useState([]);
 
   useEffect(() => {
     fetch(api_constants.API_CKTL_ALL_ALCOHOLIC)
       .then(res => res.json())
       .then(res => {
         setCocktails(res.drinks);
-      });
-
-    fetch(api_constants.API_CKTL_ALL_NON_ALCOHOLIC)
-      .then(res => res.json())
-      .then(res => {
-        setNaCocktails(res.drinks);
-      });
-
-    fetch(api_constants.API_CKTL_ALL_SHOTS)
-      .then(res => res.json())
-      .then(res => {
-        setShots(res.drinks);
-      });
+      }, [])
+      .catch((error) => {
+        console.log(error)});
 
     window.addEventListener("scroll", handleScroll);
 
   }, []);
-
-  // const handleSelectedBevUpdate = bev => {
-  //   setSelectedBev(bev);
-  // };
 
   const handleScroll = (e) => {
     if (
@@ -53,6 +36,8 @@ function App() {
         .classList.remove("scrolled");
     }
   };
+
+  // console.log('cocktails :', cocktails);
 
   return (
     <div className="App">
@@ -73,12 +58,15 @@ function App() {
           render={props => (
             <>
               <Main
-                cocktails={cocktails}
-                // setBev={handleSelectedBevUpdate}
+                cocktails={
+                    cocktails.filter(c => {
+                      return c.strCategory.toUpperCase() !== 'SHOT';
+                      //return c;
+                    })}
+                setCocktails={setCocktails}
                 {...props}
                 exact
               />
-              {/* <Beverage bev={selectedBev} {...props} /> */}
             </>
           )}
         ></Route>

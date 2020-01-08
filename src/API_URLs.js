@@ -27,11 +27,11 @@ export const API_CKTL_BY_ID =
 // https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka
 
 // Get all alcoholic drinks
-export const API_CKTL_ALL_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?a=Alcoholic`;
+// export const API_CKTL_ALL_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?a=Alcoholic`;
 
-// Get all non-alcoholic drinks
-export const API_CKTL_ALL_NON_ALCOHOLIC =
-         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?a=Non_Alcoholic`;
+export const API_CKTL_ALL_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/search.php?s=`;
+
+export const API_CKTL_ALL_NON_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/filter.php?a=Non_Alcoholic`;
 
 // Get all shots
 export const API_CKTL_ALL_SHOTS =

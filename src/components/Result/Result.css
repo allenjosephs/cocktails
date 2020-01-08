@@ -5,18 +5,18 @@
   position: relative;
 }
 
-.Result:hover {
+.Result:hover:not(.fetched) {
   border: 5px solid black;
   box-shadow:
-    1px 0px 1px 2px rgb(235, 252, 0),
-    -1px 0px 1px 2px rgb(235, 252, 0),
-    5px 0px 5px 1px rgb(235, 252, 0),
-    -5px 0px 5px 1px rgb(235, 252, 0),
+    1px 0px 1px 2px rgb(252, 0, 0),
+    -1px 0px 1px 2px rgb(252, 0, 0),
+    5px 0px 5px 1px rgb(252, 0, 0),
+    -5px 0px 5px 1px rgb(252, 0, 0),
 
-    0px 1px 1px 2px rgb(235, 252, 0),
-    0px -1px 1px 2px rgb(235, 252, 0),
-    0px 5px 5px 1px rgb(235, 252, 0),
-    0px -5px 5px 1px rgb(235, 252, 0)
+    0px 1px 1px 2px rgb(252, 0, 0),
+    0px -1px 1px 2px rgb(252, 0, 0),
+    0px 5px 5px 1px rgb(252, 0, 0),
+    0px -5px 5px 1px rgb(252, 0, 0)
   ;
   cursor: pointer;
 }
@@ -30,9 +30,10 @@
   display: block;
   border-top: 2px solid rgba(255, 255, 255, 0.507);
   font-size: .9em;
-  font-family: 'Montserrat', sans-serif;
   background-color: rgb(0, 0, 0);
   position: absolute;
+  flex-wrap: wrap;
+  overflow: hidden;
   bottom: 0;
   left: 0;
   right: 0;
@@ -56,5 +57,47 @@
     0px 5px 5px 1px rgb(185, 98, 27),
     0px -5px 5px 1px rgb(185, 98, 27)
   ;
+}
 
+.selected {
+  border: 5px solid black;
+  box-shadow:
+    1px 0px 1px 2px rgb(235, 252, 0),
+    -1px 0px 1px 2px rgb(235, 252, 0),
+    5px 0px 5px 1px rgb(235, 252, 0),
+    -5px 0px 5px 1px rgb(235, 252, 0),
+
+    0px 1px 1px 2px rgb(235, 252, 0),
+    0px -1px 1px 2px rgb(235, 252, 0),
+    0px 5px 5px 1px rgb(235, 252, 0),
+    0px -5px 5px 1px rgb(235, 252, 0)
+  ;
+  cursor: pointer;
+}
+
+.fetched {
+  border: 5px solid black;
+  /* box-shadow:
+    1px 0px 1px 2px rgb(240, 243, 199),
+    -1px 0px 1px 2px rgb(240, 243, 199),
+    5px 0px 5px 1px rgb(240, 243, 199),
+    -5px 0px 5px 1px rgb(240, 243, 199),
+
+    0px 1px 1px 2px rgb(240, 243, 199),
+    0px -1px 1px 2px rgb(240, 243, 199),
+    0px 5px 5px 1px rgb(240, 243, 199),
+    0px -5px 5px 1px rgb(240, 243, 199)
+  ; */
+
+  box-shadow:
+    1px 0px 1px 2px rgb(35, 66, 243),
+    -1px 0px 1px 2px rgb(35, 66, 243),
+    5px 0px 5px 1px rgb(35, 66, 243),
+    -5px 0px 5px 1px rgb(35, 66, 243),
+
+    0px 1px 1px 2px rgb(35, 66, 243),
+    0px -1px 1px 2px rgb(35, 66, 243),
+    0px 5px 5px 1px rgb(35, 66, 243),
+    0px -5px 5px 1px rgb(35, 66, 243)
+  ;
 }

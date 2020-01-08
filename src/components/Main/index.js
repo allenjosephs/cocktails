@@ -6,11 +6,9 @@ import './Main.css';
 import '../NavLinks';
 
 import Filters from './../Filters';
-import Results from './../Results';
-import Beverage from './../Beverage';
+import Results from './../Results'
 
 function Main(props) {
-  console.log("main")
 
   const [selectedBev, setSelectedBev] = useState({});
 
@@ -21,16 +19,20 @@ function Main(props) {
   return (
     <main className="Main">
       <Filters />
-      <Results cocktails={props.cocktails} setBev={handleSelectedBevUpdate} />
+      <Results
+        cocktails={props.cocktails}
+        setCocktails={props.setCocktails}
+        setBev={handleSelectedBevUpdate}
+      />
 
-      <Route
+      {/* <Route
         path="/cocktails/:cocktail"
         render={props => (
           <>
             <Beverage bev={selectedBev} {...props} exact/>
           </>
         )}
-      ></Route>
+      ></Route> */}
     </main>
   );
 }
