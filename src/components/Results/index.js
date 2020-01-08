@@ -3,6 +3,7 @@ import './Results.css';
 
 import Result from './../Result';
 import Beverage from './../Beverage';
+import * as api_constants from "./../../API_URLs";
 
 function Results(props) {
 
