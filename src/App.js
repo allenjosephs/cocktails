@@ -37,8 +37,6 @@ function App() {
     }
   };
 
-  // console.log('cocktails :', cocktails);
-
   const alphaSort = (a, b) => {
     let dNameA = a.strDrink.toUpperCase();
     let dNameB = b.strDrink.toUpperCase();
@@ -53,26 +51,51 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route path="/breweries/" render={() => "Hi"}></Route>
-        {/* <Route
-          path="/cocktails/:cocktail"
+        <Route
+          path="/Shots"
           render={props => (
             <>
-              <Main cocktails={cocktails} setBev={handleSelectedBevUpdate} />
-              <Beverage bev={selectedBev} {...props} />
+              <Main
+                cocktails={cocktails
+                  .filter(c => {
+                    return c.strCategory.toUpperCase() === "SHOT";
+                  })
+                  .sort(alphaSort)}
+                setCocktails={setCocktails}
+                {...props}
+                exact
+              />
             </>
           )}
-        ></Route> */}
+        ></Route>
+        <Route
+          path="/Teetotalers"
+          render={props => (
+            <>
+              <Main
+                cocktails={cocktails
+                  .filter(c => {
+                    // strAlcoholic may be null on some entries
+                    return c.strAlcoholic ? c.strAlcoholic.toUpperCase() === "NON ALCOHOLIC" : c;
+                  })
+                  .sort(alphaSort)}
+                setCocktails={setCocktails}
+                {...props}
+                exact
+              />
+            </>
+          )}
+        ></Route>
         <Route
           path="/"
           render={props => (
             <>
               <Main
-                cocktails={
-                    cocktails.filter(c => {
-                      return c.strCategory.toUpperCase() !== 'SHOT';
-                    }).sort(alphaSort)
-                }
+                cocktails={cocktails
+                  .filter(c => {
+                    return c.strCategory.toUpperCase() !== "SHOT";
+                  })
+                  .sort(alphaSort)}
                 setCocktails={setCocktails}
                 {...props}
                 exact

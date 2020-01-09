@@ -5,10 +5,9 @@ import NavLink from './../NavLink';
 function NavLinks() {
   return (
     <div className="NavLinks">
-      <NavLink txt="Mixed Drinks" /> |
-      <NavLink txt="Shots" /> |
-      <NavLink txt="Breweries" /> |
-      <NavLink txt="Teetotalers" />
+      <NavLink path="/" txt="Mixed Drinks" /> |
+      <NavLink path="Shots" txt="Shots" /> |
+      <NavLink path="Teetotalers" txt="Teetotalers" />
     </div>
   );
 }

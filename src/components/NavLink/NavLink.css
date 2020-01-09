@@ -1,6 +1,16 @@
 .NavLink {
-
   padding-bottom: .5em;
   margin: 0 2em;
   color: rgb(250, 225, 171);
+}
+
+.NavLink > a {
+  text-decoration: none;
+  color: rgb(250, 225, 171);
+  transition: 1s ease;
+}
+
+.NavLink > a:hover {
+  text-decoration: underline;
+  color: rgb(255, 174, 0);
 }

@@ -17,12 +17,10 @@ function ResultsGrid(props) {
       <NameFilter setNameFilter={handleNameFilterChange} />
       <Results
         cocktails={props.cocktails.filter(c => {
-          console.log(nameFilterValue);
           if (!nameFilterValue) {
             return true;
           } else {
             if (c.strDrink.toLowerCase().includes(nameFilterValue.toLowerCase())) {
-              console.log(c.strDrink);
               return true;
             } else {
               return false;

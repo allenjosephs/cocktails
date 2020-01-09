@@ -35,7 +35,6 @@ function Results(props) {
   }
 
   const handleClick = cocktail => {
-    console.log(cocktail)
 
     // If the arrIngredients attribute doesn't exist, parse the ingredients
     // to make them more manageable and then update cocktails
