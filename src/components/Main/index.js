@@ -18,7 +18,6 @@ function Main(props) {
 
   return (
     <main className="Main">
-      <Filters />
       <ResultsGrid
         cocktails={props.cocktails}
         setCocktails={props.setCocktails}

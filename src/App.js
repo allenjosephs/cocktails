@@ -10,6 +10,7 @@ import * as api_constants from './API_URLs';
 function App() {
 
   const [cocktails, setCocktails] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     fetch(api_constants.API_CKTL_ALL_ALCOHOLIC)
@@ -20,6 +21,15 @@ function App() {
       }, [])
       .catch((error) => {
         console.log(error)});
+
+    // fetch(api_constants.API_INGREDIENTS)
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     setIngredients(res.drinks);
+    //   }, [])
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
 
     window.addEventListener("scroll", handleScroll);
 
@@ -80,6 +90,8 @@ function App() {
 
     return bev;
   };
+
+  if (cocktails.length > 0) {
 
   return (
     <div className="App">
@@ -164,6 +176,14 @@ function App() {
       </Switch>
     </div>
   );
+
+  } else {
+    return  (
+      <>
+        <div class="loader">Loading...</div>
+      </>
+    )
+  }
 }
 
 export default App;

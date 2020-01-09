@@ -9,8 +9,8 @@ export const API_CKTLS_BY_FIRST_LETTER =
          `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/search.php?f=`;
 
 // Search by ingredient
-export const API_INGREDIENT_BY_NAME =
-         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/search.php?i=`;
+export const API_INGREDIENTS =
+         `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_CKTL_API_KEY}/list.php?i=list`;
 
 // Lookup full cocktail details by id
 export const API_CKTL_BY_ID =
