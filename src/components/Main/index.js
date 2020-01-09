@@ -1,11 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import './Main.css';
 import '../NavLinks';
 
-import Filters from './../Filters';
 import ResultsGrid from './../ResultsGrid'
 
 function Main(props) {

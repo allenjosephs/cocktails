@@ -13,7 +13,7 @@ function App() {
   const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    fetch(api_constants.API_CKTL_ALL_ALCOHOLIC)
+    fetch(api_constants.API_CKTL_ALL)
       .then(res => res.json())
       .then(res => {
         parseResults(res.drinks);
@@ -21,15 +21,6 @@ function App() {
       }, [])
       .catch((error) => {
         console.log(error)});
-
-    // fetch(api_constants.API_INGREDIENTS)
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     setIngredients(res.drinks);
-    //   }, [])
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
 
     window.addEventListener("scroll", handleScroll);
 

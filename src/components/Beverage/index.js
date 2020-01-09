@@ -1,7 +1,5 @@
 import React from 'react';
-
 import './Beverage.css';
-
 import Ingredients from './../Ingredients';
 
 function Beverage(props) {
