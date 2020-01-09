@@ -10,45 +10,7 @@ function Results(props) {
   const [bevDtls, setBevDtls] = useState([]);
   const [selectedBev, setSelectedBev] = useState([]);
 
-  const parseIngredients = (drink) => {
-    // Helper function to clean up the data in the response
-
-    // Beverage ingredients and measures are sent as 15 separate values respectively
-    // This code will create an array of 2-position arrays for each ingredient/measure
-    // pair then delete the original attributes and add the new array
-    let bev = drink;
-    let ingredientsArray = [];
-
-    for (let i = 0; i < 15; i++) {
-      if (bev[`strIngredient${(i + 1)}`]) {
-        ingredientsArray[i] = [
-          bev[`strIngredient${(i + 1)}`],
-          bev[`strMeasure${(i + 1)}`]
-        ];
-      }
-      delete bev["strIngredient" + (i + 1)];
-      delete bev["strMeasure" + (i + 1)];
-    }
-    bev.arrIngredients = ingredientsArray;
-
-    return bev;
-  }
-
   const handleClick = cocktail => {
-
-    // If the arrIngredients attribute doesn't exist, parse the ingredients
-    // to make them more manageable and then update cocktails
-    if (!cocktail.arrIngredients) {
-      cocktail = parseIngredients(cocktail);
-
-      let tmpCocktails = props.cocktails;
-      let idx = tmpCocktails.findIndex(c => {
-        return c.idDrink === cocktail.idDrink;
-      });
-
-      tmpCocktails.splice(idx, 1, cocktail);
-      props.setCocktails(tmpCocktails);
-    }
     setSticky(cocktail);
   };
 

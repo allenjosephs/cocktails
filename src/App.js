@@ -15,6 +15,7 @@ function App() {
     fetch(api_constants.API_CKTL_ALL_ALCOHOLIC)
       .then(res => res.json())
       .then(res => {
+        parseResults(res.drinks);
         setCocktails(res.drinks);
       }, [])
       .catch((error) => {
@@ -47,6 +48,37 @@ function App() {
     }
   }
 
+  const parseResults = drinksArray => {
+    // parseResults is a helper function to
+    // delegate any cleanup tasks required on the API data
+    drinksArray.map(d => {
+      parseIngredients(d);
+    })
+
+  }
+
+  const parseIngredients = drink => {
+    // Beverage ingredients and measures are sent as 15 separate values respectively
+    // This code will create an array of 2-position arrays for each ingredient/measure
+    // pair then delete the original attributes and add the new array
+    let bev = drink;
+    let ingredientsArray = [];
+
+    for (let i = 0; i < 15; i++) {
+      if (bev[`strIngredient${i + 1}`]) {
+        ingredientsArray[i] = [
+          bev[`strIngredient${i + 1}`],
+          bev[`strMeasure${i + 1}`]
+        ];
+      }
+      delete bev[`strIngredient${(i + 1)}`];
+      delete bev[`strMeasure${(i + 1)}`];
+    }
+    bev.arrIngredients = ingredientsArray;
+
+    return bev;
+  };
+
   return (
     <div className="App">
       <Header />
@@ -76,7 +108,7 @@ function App() {
                 cocktails={cocktails
                   .filter(c => {
                     // strAlcoholic may be null on some entries
-                    return c.strAlcoholic ? c.strAlcoholic.toUpperCase() === "NON ALCOHOLIC" : c;
+                    return c.strAlcoholic ? c.strAlcoholic.toUpperCase() !== "ALCOHOLIC" : c;
                   })
                   .sort(alphaSort)}
                 setCocktails={setCocktails}
@@ -93,7 +125,8 @@ function App() {
               <Main
                 cocktails={cocktails
                   .filter(c => {
-                    return c.strCategory.toUpperCase() !== "SHOT";
+                    return ((c.strAlcoholic ? c.strAlcoholic.toUpperCase() === "ALCOHOLIC" : false) &&
+                      (c.strCategory.toUpperCase() !== "SHOT"));
                   })
                   .sort(alphaSort)}
                 setCocktails={setCocktails}
