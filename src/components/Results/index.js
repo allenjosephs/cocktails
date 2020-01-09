@@ -29,6 +29,9 @@ function Results(props) {
   };
 
   const setSticky = cocktail => {
+    // Purpose: set various attributes in the data related to what's been
+    // clicked and what's currently selected.
+
     let id = cocktail.idDrink;
 
     // Mark as fetched

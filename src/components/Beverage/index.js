@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './Beverage.css';
 
@@ -8,13 +8,11 @@ function Beverage(props) {
 
   let cocktail = props.cocktail;
 
-  let thumbnail = "";
   if (cocktail.length > 0) {
     return (
       <div className="Beverage" id="Beverage">
         <img src={cocktail[0].strDrinkThumb}></img>
         <div className="bevName">{cocktail[0].strDrink}</div>
-
         {cocktail[0].arrIngredients &&
           <div className="ingredients">
             <Ingredients ingredients={cocktail[0].arrIngredients} />
