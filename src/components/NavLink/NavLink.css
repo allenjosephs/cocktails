@@ -14,6 +14,10 @@
   color: rgb(255, 174, 0);
 }
 
+/* The following code is for animating the underline of the primary links
+/  Reference: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+*/
+
 .NavLink > a:before {
   content: "";
   position: absolute;
@@ -35,6 +39,8 @@
   color: rgb(255, 174, 0);
 }
 
+
+/* This code was added by me to keep the underline visible of the active link */
 .NavLink > a:after {
   content: "";
   position: absolute;

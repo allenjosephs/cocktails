@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-// const [selectedBev, setSelectedBev] = useState({})
 
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
