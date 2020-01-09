@@ -13,7 +13,7 @@ Joe Allen
 * Scroll to browse the list of available drinks within the selected category
 * Hover the mouse over a drink thumbnail to show the drink details callout
 * Click the drink to freeze that drink in the drink details callout
-** Note: After clicking, hovering over other drinks will still change the callout details, however, moving the mouse off of the icons panel will show the selected drink.
+    * Note: After clicking, hovering over other drinks will still change the callout details, however, moving the mouse off of the icons panel will show the selected drink.
 
 
 
