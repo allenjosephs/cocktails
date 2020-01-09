@@ -7,7 +7,7 @@ import NavLinks from '../NavLinks';
 function Header(props) {
   return (
     <nav className="Header">
-      <h1>Cocktails</h1>
+      <h1>drink.</h1>
       <NavLinks />
     </nav>
   )

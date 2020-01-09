@@ -15,20 +15,17 @@ function Results(props) {
   };
 
   const showBeverage = cocktail => {
-    // Function called if user is hovering over a result thumbnail
-    // Since the content needed to show has already been fetched, don't fetch again
+    // Function is called as user hovers over or moves off a result thumbnail
 
-    // let stickyBev = document.querySelector(".selected");
-    // if (!stickyBev) {
       if (cocktail) {
+        //User has hovered over a thumbnail
         setBevDtls([cocktail]);
       } else {
-        // User has scrolled off a icon
-        // so we leave the last selected (if any)
-        // beverage in the callout
+        // User has scrolled off a thumbnail
+        // so we leave the last selected
+        // beverage (if any) in the callout
         setBevDtls([selectedBev]);
       }
-    // }
   };
 
    const setSticky = cocktail => {
