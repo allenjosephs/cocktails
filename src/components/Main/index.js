@@ -23,6 +23,7 @@ function Main(props) {
         cocktails={props.cocktails}
         setCocktails={props.setCocktails}
         setBev={handleSelectedBevUpdate}
+        allCocktails={props.allCocktails}
       />
 
       {/* <Route

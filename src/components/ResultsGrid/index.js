@@ -29,7 +29,7 @@ function ResultsGrid(props) {
         })}
         setCocktails={props.setCocktails}
         setBev={props.handleSelectedBevUpdate}
-        allCocktails={props.cocktails}
+        allCocktails={props.allCocktails}
       />
     </div>
   );

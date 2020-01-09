@@ -34,13 +34,14 @@ function Results(props) {
     // Mark as fetched
     cocktail.fetched = "fetched";
 
-    let tmpAllCocktails = props.allCocktails;
+    let tmpAllCocktails = props.allCocktails.slice(0);
+
     if (cocktail.selected) {
       // user clicked on currently selected drink
       cocktail.selected = "";
       setSelectedBev([]);
 
-      let idx = props.allCocktails.findIndex(c => {
+      let idx = tmpAllCocktails.findIndex(c => {
         return c.idDrink === cocktail.idDrink;
       });
 
@@ -49,7 +50,7 @@ function Results(props) {
 
     } else {
       // user click on new drink, clear "selected" from all other drinks
-      tmpAllCocktails = props.allCocktails.map(c => {
+      let tmpAllCocktails2 = tmpAllCocktails.map(c => {
         c.selected = "";
         return c;
       });
@@ -58,12 +59,13 @@ function Results(props) {
       cocktail.selected = "selected";
       setSelectedBev(cocktail);
 
-      let idx = props.allCocktails.findIndex(c => {
+      // update all cocktails
+      let idx = tmpAllCocktails2.findIndex(c => {
         return c.idDrink === cocktail.idDrink;
       });
 
-      tmpAllCocktails.splice(idx, 1, cocktail);
-      props.setCocktails(tmpAllCocktails);
+      tmpAllCocktails2.splice(idx, 1, cocktail);
+      props.setCocktails(tmpAllCocktails2);
     }
   };
 

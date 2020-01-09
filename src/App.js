@@ -96,6 +96,7 @@ function App() {
                   })
                   .sort(alphaSort)}
                 setCocktails={setCocktails}
+                allCocktails={cocktails}
                 {...props}
                 exact
               />
@@ -110,10 +111,13 @@ function App() {
                 cocktails={cocktails
                   .filter(c => {
                     // strAlcoholic may be null on some entries
-                    return c.strAlcoholic ? c.strAlcoholic.toUpperCase() !== "ALCOHOLIC" : c;
+                    return c.strAlcoholic
+                      ? c.strAlcoholic.toUpperCase() !== "ALCOHOLIC"
+                      : c;
                   })
                   .sort(alphaSort)}
                 setCocktails={setCocktails}
+                allCocktails={cocktails}
                 {...props}
                 exact
               />
@@ -127,11 +131,16 @@ function App() {
               <Main
                 cocktails={cocktails
                   .filter(c => {
-                    return ((c.strAlcoholic ? ((c.strAlcoholic.toUpperCase() === "ALCOHOLIC") || (c.strAlcoholic.toUpperCase().includes("OPTIONAL"))) : false) &&
-                      (c.strCategory.toUpperCase() !== "SHOT"));
+                    return (
+                      (c.strAlcoholic
+                        ? c.strAlcoholic.toUpperCase() === "ALCOHOLIC" ||
+                          c.strAlcoholic.toUpperCase().includes("OPTIONAL")
+                        : false) && c.strCategory.toUpperCase() !== "SHOT"
+                    );
                   })
                   .sort(alphaSort)}
                 setCocktails={setCocktails}
+                allCocktails={cocktails}
                 {...props}
                 exact
               />
