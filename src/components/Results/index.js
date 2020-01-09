@@ -28,36 +28,44 @@ function Results(props) {
       }
   };
 
-   const setSticky = cocktail => {
-     let id = cocktail.idDrink;
+  const setSticky = cocktail => {
+    let id = cocktail.idDrink;
 
-     // Mark as fetched if not already
-     !document.getElementById(id).classList.contains("fetched") &&
-       document.getElementById(id).classList.add("fetched");
+    // Mark as fetched
+    cocktail.fetched = "fetched";
 
-     if (document.getElementById(id).classList.contains("selected")) {
-       // user clicked on the existing sticky drink; toggle sticky off
-       document.getElementById(id).classList.toggle("selected");
-       setSelectedBev([]);
-      //  document.getElementById("Beverage").classList.toggle("sticky");
-     } else {
-       // user clicked on a new drink
-       // clear existing selected drink (if any)
-       let selectedDrink = document.querySelector(".selected");
-       selectedDrink && selectedDrink.classList.toggle("selected");
+    let tmpAllCocktails = props.allCocktails;
+    if (cocktail.selected) {
+      // user clicked on currently selected drink
+      cocktail.selected = "";
+      setSelectedBev([]);
 
-       // set new drink to selected
-       document.getElementById(id).classList.toggle("selected");
-       setSelectedBev(cocktail);
+      let idx = props.allCocktails.findIndex(c => {
+        return c.idDrink === cocktail.idDrink;
+      });
 
-       // toggle off the beverage callout's sticky-ness only if it's already sticky
-      //  let stickyBev = document.querySelector(".sticky");
-      //  stickyBev && stickyBev.classList.toggle("sticky");
+      tmpAllCocktails.splice(idx, 1, cocktail);
+      props.setCocktails(tmpAllCocktails);
 
-      //  showBeverage(cocktail);
-      //  document.getElementById("Beverage").classList.toggle("sticky");
-     }
-   };
+    } else {
+      // user click on new drink, clear "selected" from all other drinks
+      tmpAllCocktails = props.allCocktails.map(c => {
+        c.selected = "";
+        return c;
+      });
+
+      // set selected on this cocktail
+      cocktail.selected = "selected";
+      setSelectedBev(cocktail);
+
+      let idx = props.allCocktails.findIndex(c => {
+        return c.idDrink === cocktail.idDrink;
+      });
+
+      tmpAllCocktails.splice(idx, 1, cocktail);
+      props.setCocktails(tmpAllCocktails);
+    }
+  };
 
   return (
     <>

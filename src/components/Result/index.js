@@ -9,7 +9,7 @@ function Result(props) {
   return (
     <div
       id={cocktail.idDrink}
-      className="Result thumbs"
+      className={`Result thumbs ${cocktail.fetched} ${cocktail.selected}`}
       onClick={() => props.handleClick(cocktail)}
       onMouseOver={() => props.showBeverage(cocktail)}
       onMouseLeave={() => props.showBeverage(null)}

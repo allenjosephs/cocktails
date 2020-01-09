@@ -52,6 +52,8 @@ function App() {
     // parseResults is a helper function to
     // delegate any cleanup tasks required on the API data
     drinksArray.map(d => {
+      d.fetched = "";
+      d.selected = "";
       parseIngredients(d);
     })
 
@@ -125,7 +127,7 @@ function App() {
               <Main
                 cocktails={cocktails
                   .filter(c => {
-                    return ((c.strAlcoholic ? c.strAlcoholic.toUpperCase() === "ALCOHOLIC" : false) &&
+                    return ((c.strAlcoholic ? ((c.strAlcoholic.toUpperCase() === "ALCOHOLIC") || (c.strAlcoholic.toUpperCase().includes("OPTIONAL"))) : false) &&
                       (c.strCategory.toUpperCase() !== "SHOT"));
                   })
                   .sort(alphaSort)}

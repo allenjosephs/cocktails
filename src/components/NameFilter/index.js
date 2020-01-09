@@ -10,6 +10,8 @@ function NameFilter(props) {
       <input
         type="text"
         id="nameFilterBox"
+        placeholder="search..."
+        name="search"
         onChange={(e) => props.setNameFilter(e)}
       ></input>
     </div>

@@ -29,6 +29,7 @@ function ResultsGrid(props) {
         })}
         setCocktails={props.setCocktails}
         setBev={props.handleSelectedBevUpdate}
+        allCocktails={props.cocktails}
       />
     </div>
   );
