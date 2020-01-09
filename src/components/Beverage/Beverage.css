@@ -18,7 +18,8 @@
     0px 5px 5px 1px rgb(185, 98, 27),
     0px -5px 5px 1px rgb(185, 98, 27)
   ;
-  /* transition: 1s ease; */
+
+  transition: 1s ease;
 }
 
 .Beverage > img {

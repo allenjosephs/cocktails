@@ -25,15 +25,6 @@ function Main(props) {
         setBev={handleSelectedBevUpdate}
         allCocktails={props.allCocktails}
       />
-
-      {/* <Route
-        path="/cocktails/:cocktail"
-        render={props => (
-          <>
-            <Beverage bev={selectedBev} {...props} exact/>
-          </>
-        )}
-      ></Route> */}
     </main>
   );
 }

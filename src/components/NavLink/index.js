@@ -6,7 +6,6 @@ import './NavLink.css';
 function NavLink(props) {
 
   const setActivePage = () => {
-    console.log("here")
     props.setActivePage(props.txt);
   }
 

@@ -86,7 +86,30 @@ function App() {
       <Header />
       <Switch>
         <Route
-          path="/Shots"
+          path="/mixed"
+          render={props => (
+            <>
+              <Main
+                cocktails={cocktails
+                  .filter(c => {
+                    return (
+                      (c.strAlcoholic
+                        ? c.strAlcoholic.toUpperCase() === "ALCOHOLIC" ||
+                          c.strAlcoholic.toUpperCase().includes("OPTIONAL")
+                        : false) && c.strCategory.toUpperCase() !== "SHOT"
+                    );
+                  })
+                  .sort(alphaSort)}
+                setCocktails={setCocktails}
+                allCocktails={cocktails}
+                {...props}
+                exact
+              />
+            </>
+          )}
+        ></Route>
+        <Route
+          path="/shots"
           render={props => (
             <>
               <Main
@@ -104,7 +127,7 @@ function App() {
           )}
         ></Route>
         <Route
-          path="/Teetotalers"
+          path="/teetotal"
           render={props => (
             <>
               <Main
@@ -129,16 +152,7 @@ function App() {
           render={props => (
             <>
               <Main
-                cocktails={cocktails
-                  .filter(c => {
-                    return (
-                      (c.strAlcoholic
-                        ? c.strAlcoholic.toUpperCase() === "ALCOHOLIC" ||
-                          c.strAlcoholic.toUpperCase().includes("OPTIONAL")
-                        : false) && c.strCategory.toUpperCase() !== "SHOT"
-                    );
-                  })
-                  .sort(alphaSort)}
+                cocktails={cocktails.sort(alphaSort)}
                 setCocktails={setCocktails}
                 allCocktails={cocktails}
                 {...props}
